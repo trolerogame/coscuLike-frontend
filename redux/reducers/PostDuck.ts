@@ -34,8 +34,8 @@ const createPost =
       },
     };
     try {
-      const resPy = await  axios.post("http://127.0.0.1:5000/",dates)
-      if(resPy.data === "cocu 😍"){
+      // const resPy = await  axios.post("http://127.0.0.1:5000/",dates)
+      // if(resPy.data === "cocu 😍"){
         const { data } = await axios.post(
           `${URL_POSTS}uploadCloud`,
           dates
@@ -47,8 +47,8 @@ const createPost =
         );
         window.localStorage.setItem("user", JSON.stringify(userUpdate.data));
         return true;
-      }
-     return false 
+      // }
+    //  return false 
     } catch (err) {
       console.log("no iniciaste seccion");
       return false;
