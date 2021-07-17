@@ -76,7 +76,7 @@ const CardPost = ({
         )}
       </div>
       <Image
-        loader={({ src }: any) => `http://localhost:3002/public/avatar${src}`}
+        loader={({ src }: any) => `https://coscu-node.herokuapp.com/public/avatar${src}`}
         src={"/" + postInfo.url}
         width={380}
         height={200}
