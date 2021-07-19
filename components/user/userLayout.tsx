@@ -4,7 +4,7 @@ import Image from "next/image";
 import CardPost from "../home/CardPost";
 import ProfileEdit from "./profileConfig";
 const userLayout = ({ username, propretier, asPath }: any) => {
-  // if (!propretier) document.location.href = "/";
+  setTimeout(()=>{ if (!propretier) document.location.href = "/"},1000)
   return (
     <div className="d-flex flex-column justify-content-center align-items-center my-4 w-100">
       {username && (
