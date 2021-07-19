@@ -27,12 +27,12 @@ const CardPostDropdown = ({post,config,deleteImage,setEditValidate,GetPost,getUs
             <Dropdown.Menu>
                 {!config && (
                     <Dropdown.Item >
-                        <CopyLink text={`http://localhost:3002/public/avatar/${post.url}`}/>
+                        <CopyLink text={`https://coscu-node.herokuapp.com/public/avatar/${post.url}`}/>
                     </Dropdown.Item>
                 )}
                 {config && (
                     <>
-                        <Dropdown.Item><CopyLink text={`http://localhost:3002/public/avatar/${post.url}`}/></Dropdown.Item>
+                        <Dropdown.Item><CopyLink text={`https://coscu-node.herokuapp.com/public/avatar/${post.url}`}/></Dropdown.Item>
                         <Dropdown.Item  onClick={() => setEditValidate(true)}>editar descripcion</Dropdown.Item>
                         <Dropdown.Item onClick={DeleteUser}>eliminar imagen</Dropdown.Item>
                     </>
