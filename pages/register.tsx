@@ -30,7 +30,7 @@ const Register = ({ createuser }: any): any => {
       createuser(username.camp, password.camp, email.camp).then(
         (va: boolean) => {
           if (va) return (window.location.href = "/login");
-          if (!va) setUserExit(false);
+          setUserExit(false);
         }
       );
     }
