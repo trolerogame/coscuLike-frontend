@@ -4,7 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import {BoxForm, ContaintForm} from "../styles/style-header"
 const RegisterAndLogin = (props: any) => {
     return (
-        <Head title={props.title}>
+        // <Head title={props.title}>
             <ContaintForm className="vh-100">
                 <BoxForm className="shadow p-5 bg-body rounded">
                     <h1 className="text-center mb-4">{props.header}</h1>
@@ -13,7 +13,7 @@ const RegisterAndLogin = (props: any) => {
                     </div>
                 </BoxForm>
             </ContaintForm>
-        </Head>
+        /* </Head> */
     )
 }
 

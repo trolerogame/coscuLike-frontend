@@ -17,7 +17,8 @@ const index = ({ post, GetPost, getUser }: any) => {
     }
   }, [GetPost, getUser, post]);
   return (
-    <Head title="Home">
+    // <Head title="Home">
+    <>
       <Header />
       <main className="container d-flex flex-column align-items-center my-5">
         {post
@@ -29,7 +30,8 @@ const index = ({ post, GetPost, getUser }: any) => {
           .reverse()
         }
       </main>
-    </Head>
+      {/* </Head> */}
+    </>
   );
 };
 function mapStateToProps(state: any) {

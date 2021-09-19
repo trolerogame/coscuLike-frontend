@@ -17,6 +17,9 @@ const CardPost = Styled.div`
         object-fit:cover;
         border-radius:100%;
     }
+    @media(max-width:385px){
+        border-radius:0;
+    }
 `;
 const Elipse = Styled.span`
     width: 8px;
@@ -36,7 +39,18 @@ const DropdownToggle = Styled(Dropdown.Toggle)`
     }
     &::after{
         content:"";
-        display:none
+        display:none;
     }
 `;
-export { ContaintForm, BoxForm, CardPost, Elipse, ButtonMore, DropdownToggle };
+
+const HeaderStyle = Styled.nav`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin:5px 20px;
+    @media (max-width: 630px) {
+        flex-direction:column;
+        align-items:center;
+    }
+`
+export { ContaintForm, BoxForm, CardPost, Elipse, ButtonMore, DropdownToggle, HeaderStyle };

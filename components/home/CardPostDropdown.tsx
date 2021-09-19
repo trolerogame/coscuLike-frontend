@@ -6,6 +6,7 @@ import {DropdownToggle} from "../../styles/style-header"
 import CopyLink from "./copyLink"
 import {deleteImage,GetPost} from "../../redux/reducers/PostDuck"
 import { getUserById,getUser } from '../../redux/reducers/UserDuck'
+import {urlUpload} from '../../redux/types'
 const CardPostDropdown = ({post,config,deleteImage,setEditValidate,GetPost,getUserById,getUser}:any) => {
     //? si el usuario se pudo eliminar correctamente se redirreciona al home
     const DeleteUser = () => {
@@ -27,12 +28,12 @@ const CardPostDropdown = ({post,config,deleteImage,setEditValidate,GetPost,getUs
             <Dropdown.Menu>
                 {!config && (
                     <Dropdown.Item >
-                        <CopyLink text={`https://coscu-node.herokuapp.com/uploads/avatar/${post.url}`}/>
+                        <CopyLink text={urlUpload + post.url}/>
                     </Dropdown.Item>
                 )}
                 {config && (
                     <>
-                        <Dropdown.Item><CopyLink text={`https://coscu-node.herokuapp.com/uploads/avatar/${post.url}`}/></Dropdown.Item>
+                        <Dropdown.Item><CopyLink text={urlUpload + post.url}/></Dropdown.Item>
                         <Dropdown.Item  onClick={() => setEditValidate(true)}>editar descripcion</Dropdown.Item>
                         <Dropdown.Item onClick={DeleteUser}>eliminar imagen</Dropdown.Item>
                     </>

@@ -10,6 +10,7 @@ import { likePost } from "../../redux/reducers/PostDuck";
 import { getUserById, getUser } from "../../redux/reducers/UserDuck";
 import UserUndefined from "../../public/usernameUndefine.png";
 import EditImage from "../forms/EditImage";
+import {urlUpload} from '../../redux/types'
 const CardPost = ({
   user,
   postInfo,
@@ -44,7 +45,7 @@ const CardPost = ({
           {avatar && (
             <Image
               loader={({ src }: any) =>
-                `https://coscu-node.herokuapp.com/uploads/avatar${src}`
+                urlUpload + src
               }
               src={"/" + avatar}
               alt="title"
@@ -76,7 +77,7 @@ const CardPost = ({
         )}
       </div>
       <Image
-        loader={({ src }: any) => `https://coscu-node.herokuapp.com/public/avatar${src}`}
+        loader={({ src }: any) =>  urlUpload + src }
         src={"/" + postInfo.url}
         width={380}
         height={200}

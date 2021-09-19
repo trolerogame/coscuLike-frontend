@@ -5,33 +5,32 @@ import Link from "next/link"
 import {connect} from "react-redux"
 import ProfileDropdown from "./profileDropdown";
 import ModalImage from "./modalImage"
+import {HeaderStyle} from '../styles/style-header'
 const Header = (props:any) => {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    <Link href="/" passHref>
-                        <button className="btn p-0">
-                            <Image src={LOGO} alt="coscu Logo" />
-                        </button>
-                    </Link>
-                    <div className="px-4 d-flex align-items-center">
-                        {!props.token && (
-                            <>
-                                <Link href="/register" passHref><p className="btn btn-success mx-3">Sign up</p></Link>
-                                <Link href="/login" passHref><p className="btn mx-3">Sign In</p></Link>
-                                
-                            </>
-                        )}
-                        {props.token && (
-                            <>
-                                <ModalImage/>
-                                <ProfileDropdown user={props.user} />
-                            </>
-                        )}
-                    </div>
+            <HeaderStyle>
+                <Link href="/" passHref>
+                    <button className="btn p-0">
+                        <Image src={LOGO} alt="coscu Logo" />
+                    </button>
+                </Link>
+                <div className="px-4 d-flex align-items-center">
+                    {!props.token && (
+                        <>
+                            <Link href="/register" passHref><p className="btn btn-success mx-3">Sign up</p></Link>
+                            <Link href="/login" passHref><p className="btn mx-3">Sign In</p></Link>
+                            
+                        </>
+                    )}
+                    {props.token && (
+                        <>
+                            <ModalImage/>
+                            <ProfileDropdown user={props.user} />
+                        </>
+                    )}
                 </div>
-            </nav>
+            </HeaderStyle>
         </header>
     )
 }
