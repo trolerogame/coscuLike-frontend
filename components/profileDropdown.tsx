@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { logOut } from "../redux/reducers/UserDuck";
 import { DropdownToggle } from "../styles/style-header";
 import Link from "next/link";
+import {urlUpload} from '../redux/types'
 const profileDropdown = ({ logOut, user }: any) => {
   return (
     <Dropdown>
@@ -18,7 +19,7 @@ const profileDropdown = ({ logOut, user }: any) => {
         {user.avatar ? (
           <Image
             loader={({ src }: any) =>
-              `http://localhost:3002/public/avatar${src}`
+              urlUpload + src
             }
             src={"/" + user.avatar}
             className="rounded"

@@ -3,6 +3,7 @@ import UserUndefined from "../../public/usernameUndefine.png";
 import Image from "next/image";
 import CardPost from "../home/CardPost";
 import ProfileEdit from "./profileConfig";
+import {urlUpload} from '../../redux/types'
 const userLayout = ({ username, propretier, asPath }: any) => {
   setTimeout(()=>{ if (!propretier) document.location.href = "/"},1000)
   return (
@@ -14,7 +15,7 @@ const userLayout = ({ username, propretier, asPath }: any) => {
               ?  
               
               <Image
-                loader={({src}:any)=> `http://localhost:3002/public/avatar${src}`}
+                loader={({src}:any)=>  urlUpload + src }
                 src={"/" + username.avatar}
                 alt=""
                 className="rounded-circle"
